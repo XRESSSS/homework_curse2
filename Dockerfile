@@ -1,7 +1,12 @@
-FROM python:3.10.3-slim
+FROM python:3.11.6-slim
 
 WORKDIR /app
 
+ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE 1
+
+RUN apt-get upgrade
+
 COPY . .
 
-CMD ["python", "main.py", "5"]
+CMD ["python", "homework5"]
