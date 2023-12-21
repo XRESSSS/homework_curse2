@@ -6,7 +6,12 @@ ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
 RUN apt-get upgrade
+RUN python -m pip install --upgrade pip
+RUN pip install poetry
+
 
 COPY . .
 
-CMD ["python", "homework5"]
+RUN poetry install
+
+CMD ["python", "homework5.py"]

@@ -10,7 +10,7 @@ with open(csv_filename, mode='w', newline='') as csv_file:
     fieldnames = ['timestamp', 'latitude', 'longitude']
     writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
     writer.writeheader()
-
+    print(1111111111111222222222)
     while True:
         response = requests.get(iss_api_url)
         data = response.json()
@@ -19,4 +19,6 @@ with open(csv_filename, mode='w', newline='') as csv_file:
         longitude = data['iss_position']['longitude']
         writer.writerow({'timestamp': timestamp, 'latitude': latitude, 'longitude': longitude})
         time.sleep(5)
+
+        print(2222222222222222222222)
 
